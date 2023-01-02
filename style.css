@@ -1,0 +1,142 @@
+:root {
+    --firstCard: #f96c00;
+    --secondCard:#c215ce;
+    --thirdCard:#4f16ca;
+    --fourthCard: #16c745;
+}
+* {
+    margin: 0;
+    padding:0;
+   box-sizing: border-box;
+   font-family: Jost;
+}
+body {
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    background-color: #ccc;
+    /* the part coming for making the content in the center of the page */
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.container{
+    margin: 0 50px;
+    width: 250px;  
+    height: 320px;
+    background-color: #efefef;
+    border-radius: 20px;
+    padding: 40px 35px;
+    border: 2px solid #fff;
+    text-align: left;
+    box-shadow: 2px 2px 8px rgb(180, 180, 180),
+    -3px -.3px 8px rgb(180, 180, 180);
+    position: relative;
+}
+
+.container h1{
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+.container p{
+    font-size: 18px;
+    width: 100%;
+    color: #585858;
+    line-height: 1.5;
+}
+.container span{
+    position: absolute;
+    bottom: -50px;
+    left: 20%;
+    color: #f3f3f3;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 415px;
+    background-color: var(--firstCard);
+    border-radius: 20px;
+    left: -32px;
+    top: -32px;
+    z-index: -1;
+}
+.container::after{
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 0px;
+    border-left: 46px solid transparent;
+    border-right: 46px solid transparent;
+    z-index: 0;
+    transform: rotate(-90deg);
+    top: 80px;
+    right: 104px;
+}
+.container i{
+    position: absolute;
+    color: #fff;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+}
+/* background color contanier and i */
+
+.container:nth-child(1)::before,
+.container:nth-child(1) i{
+    background-color: var(--firstCard);
+}
+.container:nth-child(2)::before,
+.container:nth-child(2) i{
+    background-color: var(--secondCard);
+}
+.container:nth-child(3)::before,
+.container:nth-child(3) i{
+    background-color: var(--thirdCard);
+}
+.container:nth-child(4)::before,
+.container:nth-child(4) i{
+    background-color: var(--fourthCard);
+}
+
+/* color h1 */
+
+.container:nth-child(1) h1{
+    color: var(--firstCard);
+}
+.container:nth-child(2) h1{
+    color: var(--secondCard);
+}
+.container:nth-child(3) h1{
+    color: var(--thirdCard);
+}
+.container:nth-child(4) h1{
+    color: var(--fourthCard);
+}
+
+/* after border top */
+
+.container:nth-child(1)::after{
+    border-top: 45px solid var(--firstCard);
+}
+.container:nth-child(2)::after{
+    border-top: 45px solid var(--secondCard);
+}
+
+.container:nth-child(3)::after{
+    border-top: 45px solid var(--thirdCard);
+}
+
+.container:nth-child(4)::after{
+    border-top: 55px solid var(--fourthCard);
+}
